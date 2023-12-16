@@ -1,16 +1,18 @@
 ---
-
+import "@/styles/globals.css";
+import Layout from "@/components/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <main class="md:flex md:gap-28 items-center text-center">
+    <img
+      src="/monoyaffu.png"
+      alt="Illustration of a fox"
+      class="rounded-full dark:bg-gray-700"
+      width="400"
+      height="400"
+      style="aspect-ratio: 400 / 400; object-fit: cover;"
+    />
+    <h1 class="text-3xl font-bold mt-10">Hello World Yaffuです。</h1>
+  </main>
+</Layout>
