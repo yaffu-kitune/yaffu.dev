@@ -55,7 +55,7 @@ export function SideMenu({
               <HomeIcon className="w-6 h-6 text-gray-500 dark:text-gray-400" />
               <a
                 className="text-sm font-medium transition-color  px-2 py-1 rounded-md"
-                href="#"
+                href="/"
               >
                 Home
                 <ChevronRightIcon className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -65,7 +65,7 @@ export function SideMenu({
               <TagsIcon className="w-6 h-6 text-gray-500 dark:text-gray-400" />
               <a
                 className="text-sm font-medium transition-colors  px-2 py-1 rounded-md "
-                href="#"
+                href="/blog"
               >
                 Blog
                 <ChevronRightIcon className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
