@@ -1,0 +1,43 @@
+---
+import Layout from "@/components/Layout/Layout.astro";
+import { CardHeader, CardContent, Card } from "@/components/ui/card";
+import "@/styles/globals.css";
+import { getCollection } from "astro:content";
+const blogEntries = await getCollection("blog");
+blogEntries.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+---
+
+<Layout>
+  <main class="p-6 space-y-6">
+    <h1 class="text-3xl font-bold">ブログ</h1>
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {blogEntries.map(blogPostEntry => (
+      <Card>
+        <CardHeader>
+          <h2 class="text-2xl font-semibold">{blogPostEntry.data.title}</h2>
+        </CardHeader>
+        <CardContent className="space-y-2">
+          <p class="text-gray-500">{blogPostEntry.data.date}</p>
+          <p>
+            {blogPostEntry.data.description}
+          </p>
+          <img
+            alt="Cover image"
+            class="w-full h-64 object-cover"
+            height="200"
+            src={blogPostEntry.data.image}
+            style={{
+              aspectRatio: "300/200",
+              objectFit: "cover",
+            }}
+            width="300"
+          />
+        </CardContent>
+        <div class="p-4">
+          <a class="text-blue-500" href={`/blog/${blogPostEntry.slug}`}>Read More</a>
+        </div>
+      </Card>
+      ))}
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,30 @@
+---
+import Header from "../component/Header.astro";
+import Footer from "../component/Footer.astro";
+
+//Props
+---
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="{{ $page->description }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <script type="text/partytown" src="fancy-analytics.js"></script>
+  </head>
+
+  <div
+    class="min-h-screen bg-white dark:bg-slate-800 p-8"
+  >
+    <Header title="{{ $page->title }}" />
+    <main class="">
+        <slot />
+    </main>
+    <Footer />
+  </div>
+
+
+</html>
