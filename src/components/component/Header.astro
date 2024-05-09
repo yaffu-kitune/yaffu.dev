@@ -29,7 +29,8 @@ import { SideMenu } from "@/components/component/SideMenu";
   }
 </script>
 
-<header class="w-full flex justify-between items-center">
+<header class="w-full flex flex-row-reverse md:flex-row justify-between items-center">
+  <SideMenu client:load />
   <div class="flex items-center space-x-4">
     <a href="https://github.com/yaffu-kitune">
       <svg
@@ -74,5 +75,4 @@ import { SideMenu } from "@/components/component/SideMenu";
       <Toggle client:load />
     </div>
   </div>
-  <SideMenu client:load />
 </header>

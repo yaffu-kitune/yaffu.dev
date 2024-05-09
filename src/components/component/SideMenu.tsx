@@ -20,8 +20,8 @@ export function SideMenu({
   };
 
   // Function to check if clicked outside the menu
-  const handleClickOutside = (event: { target: any; }) => {
-    if (sideMenuRef.current && !sideMenuRef.current.contains(event.target)) {
+  const handleClickOutside = (event: { target: any }) => {
+    if (sideMenuRef.current && !(sideMenuRef.current as HTMLElement).contains(event.target)) {
       setIsMenuOpen(false);
     }
   };
@@ -45,11 +45,36 @@ export function SideMenu({
         <span className="sr-only">メニュー</span>
       </Button>
       <div
-        className={`fixed z-10 inset-y-0 right-0 transform bg-[#a5ede1] dark:bg-[#14394c] text-white w-64 overflow-auto transition-transform duration-300 ease-in-out ${
+        className={`fixed z-10 inset-y-0 right-0 transform bg-[#cdfff7] dark:bg-[#14394c] text-white w-64 overflow-auto transition-transform duration-300 ease-in-out ${
           isMenuOpen ? "-translate-x-0" : "translate-x-full"
         } md:relative`}
       >
         <nav className="px-4 py-6 flex flex-col text-center md:hidden">
+          {/* close button */}
+          <div className="flex justify-end mr-6">
+            <Button
+              className="ml-auto"
+              size="icon"
+              variant="ghost"
+              onClick={handleToggle}
+            >
+              <svg
+                className="w-6 h-6 text-gray-800 dark:text-gray-200"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+              <span className="sr-only">閉じる</span>
+            </Button>
+          </div>
           <ul className="space-y-4 mt-5 text-gray-800 dark:text-gray-200">
             <li className="flex items-center space-x-3 hover:bg-gray-100 hover:bg-opacity-20 rounded-xl dark:text-gray-50 hover:text-gray-50 text-gray-900 dark:hover:text-gray-900 ">
               <HomeIcon className="w-6 h-6 text-gray-500 dark:text-gray-400" />
