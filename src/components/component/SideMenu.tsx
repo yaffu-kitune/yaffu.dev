@@ -120,7 +120,7 @@ function MenuIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function ChevronRightIcon(props) {
+function ChevronRightIcon(props: any) {
   return (
     <svg
       {...props}
@@ -139,7 +139,7 @@ function ChevronRightIcon(props) {
   );
 }
 
-function HomeIcon(props) {
+function HomeIcon(props: any) {
   return (
     <svg
       {...props}
@@ -159,7 +159,7 @@ function HomeIcon(props) {
   );
 }
 
-function TagsIcon(props) {
+function TagsIcon(props: any) {
   return (
     <svg
       {...props}
@@ -180,7 +180,7 @@ function TagsIcon(props) {
   );
 }
 
-function UserIcon(props) {
+function UserIcon(props: any) {
   return (
     <svg
       {...props}
